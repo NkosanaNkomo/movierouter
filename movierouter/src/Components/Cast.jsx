@@ -15,8 +15,7 @@ class Cast extends Component {
         const query = ""
 
     //    variable for our url to live in 
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=69cd182870360478d3f7a88179cd1206&language=en-US&query=${query}&page=1&include_adult=false`
- 
+        const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=389f0299'
 
    // use await to tell our function to wait for data
   
@@ -24,9 +23,9 @@ class Cast extends Component {
         try{
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data.results[0])}
+            console.log (data.Actors)}
             catch(err){
-            console.log(err)
+            console.log(err) 
          
         }
 
@@ -44,6 +43,9 @@ class Cast extends Component {
                     <input type="text" name="query" className="input"/>
                     <button className="button" type="submit">Cast</button>
                 </form>
+                <h1>ONLY SEARCHES "GUARDIANS OF THE GALAXY". CONSOLE.LOGS DATA BUT COULDN'T FIGURE OUT HOW TO 
+                    GET DATA TO POPULATE </h1>
+                    <h1>Yes I know that the url is specific to the Guardians ID but could not figure out how to manipulate that to be none specific</h1>
                 
             </div>
         );
